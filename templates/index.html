@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07100f">
+    <meta name="description" content="CV dan portofolio Arya Wangsa Goparana.">
+    <title>{{.Name}} | Developer Portfolio</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <nav class="container nav">
+        <a class="logo" href="#home">&gt;_ ARYA.W</a>
+
+        <div class="nav-links">
+            <a href="#about">Tentang</a>
+            <a href="#skills">Keahlian</a>
+            <a href="#projects">Proyek</a>
+            <a href="#contact">Kontak</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+
+            <div class="hero-content">
+                <p class="eyebrow">
+                    <span class="status-dot"></span>
+                    HELLO, WORLD! I'M
+                </p>
+
+                <h1>{{.Name}}</h1>
+
+                <h2 class="role">{{.Role}}</h2>
+
+                <p class="hero-description">
+                    {{.Description}}
+                </p>
+
+                <div class="buttons">
+                    <a class="button primary" href="#projects">
+                        Jelajahi Proyek ↗
+                    </a>
+
+                    <a class="button" href="/static/files/CV-Arya.pdf"
+                       target="_blank" rel="noopener">
+                        Lihat CV ↗
+                    </a>
+                </div>
+
+                <div class="quick-info">
+                    <span>⌘ Debian Linux</span>
+                    <span>⌘ Open to Learning</span>
+                </div>
+            </div>
+
+            <div class="profile-panel">
+                <div class="profile-frame">
+                    <img
+                        src="/static/images/profile.jpg"
+                        alt="Foto profil {{.Name}}"
+                        class="profile-image"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+
+                    <div class="profile-placeholder">
+                        <span>AWG</span>
+                        <small>YOUR PHOTO HERE</small>
+                    </div>
+                </div>
+
+                <div class="profile-caption">
+                    <span class="highlight">/ ABOUT_ME</span>
+                    <span class="online-label">
+                        <span class="status-dot"></span> Learning
+                    </span>
+                </div>
+
+                <div class="code-card">
+                    <p><span class="code-purple">const</span> developer = {</p>
+                    <p class="indent">name: <span class="code-green">"Arya"</span>,</p>
+                    <p class="indent">focus: <span class="code-green">"Technology"</span>,</p>
+                    <p class="indent">mindset: <span class="code-green">"Keep learning"</span></p>
+                    <p>};</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">01 / INTRODUCTION</p>
+                <h2>Tentang <span class="highlight">Saya</span></h2>
+                <p>Belajar hari ini untuk membangun sesuatu yang lebih baik esok hari.</p>
+            </div>
+
+            <div class="about-grid">
+                <article class="card about-card">
+                    <span class="card-icon">&gt;_</span>
+                    <h3>Siapa Saya?</h3>
+                    <p>{{.Description}}</p>
+                </article>
+
+                <div class="info-grid">
+                    <article class="card info-card">
+                        <span class="info-label">PENDIDIKAN</span>
+                        <h3>{{.Class}}</h3>
+                        <p>Teknik Komputer dan Jaringan</p>
+                    </article>
+
+                    <article class="card info-card">
+                        <span class="info-label">MINAT</span>
+                        <h3>Linux & Network</h3>
+                        <p>Server dan infrastruktur</p>
+                    </article>
+
+                    <article class="card info-card">
+                        <span class="info-label">HOBI</span>
+                        <h3>Petualangan</h3>
+                        <p>{{.Hobby}}</p>
+                    </article>
+
+                    <article class="card info-card">
+                        <span class="info-label">PRINSIP</span>
+                        <h3>Growth Mindset</h3>
+                        <p>{{.Motto}}</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">02 / TOOLKIT</p>
+                <h2>Skills & <span class="highlight">Technologies</span></h2>
+                <p>Bidang yang sedang saya pelajari dan praktikkan.</p>
+            </div>
+
+            <div class="skills-grid">
+                {{range .Skills}}
+                <article class="card skill-card">
+                    <span class="skill-symbol">/</span>
+                    <h3>{{.}}</h3>
+                    <p>Learning & practicing</p>
+                </article>
+                {{end}}
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">03 / SELECTED WORK</p>
+                <h2>Proyek <span class="highlight">Saya</span></h2>
+                <p>Eksperimen, latihan, dan proyek pembelajaran.</p>
+            </div>
+
+            <div class="projects-grid">
+                {{range .Projects}}
+                <article class="card project-card">
+                    <div class="project-top">
+                        <span class="project-number">{{.Number}}</span>
+                        <span class="project-category">{{.Category}}</span>
+                    </div>
+
+                    <h3>{{.Name}}</h3>
+                    <p>{{.Description}}</p>
+
+                    <div class="project-footer">
+                        <span class="tag">{{.Technology}}</span>
+                    </div>
+                </article>
+                {{end}}
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-panel">
+                <p class="eyebrow">04 / CONTACT</p>
+                <h2>Mari membangun sesuatu <span class="highlight">bersama.</span></h2>
+                <p>
+                    Saya terbuka untuk belajar, bertukar ide, dan berdiskusi
+                    tentang Linux, jaringan, serta pengembangan perangkat lunak.
+                </p>
+
+                <div class="buttons center-buttons">
+                    {{if .GitHub}}
+                    <a class="button primary"
+                       href="{{.GitHub}}"
+                       target="_blank" rel="noopener">
+                        GitHub ↗
+                    </a>
+                    {{end}}
+
+                    <a class="button" href="#home">Kembali ke atas ↑</a>
+                </div>
+
+                {{if not .GitHub}}
+                <p class="contact-note">
+                    Tautan GitHub akan ditambahkan setelah username dikonfigurasi.
+                </p>
+                {{end}}
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-content">
+        <a class="logo" href="#home">&gt;_ ARYA.W</a>
+        <p>© 2026 {{.Name}} · Built while learning Go.</p>
+    </div>
+</footer>
+
+</body>
+</html>
