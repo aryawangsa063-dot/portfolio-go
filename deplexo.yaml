@@ -2,9 +2,8 @@ version: 1
 type: web
 
 build:
-  framework: auto
-  command: go build -o app .
+  framework: dockerfile
+  dockerfile: Dockerfile
 
 run:
-  command: ./app
   port: 8000
