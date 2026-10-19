@@ -1,0 +1,10 @@
+version: 1
+type: web
+
+build:
+  framework: auto
+  command: go build -o app .
+
+run:
+  command: ./app
+  port: 8000
